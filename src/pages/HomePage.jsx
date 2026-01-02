@@ -1,6 +1,7 @@
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import hero from "../assets/hero_transparent.png";
+import ProductCard from "../components/ProductCard";
 export default function HomePage () { 
     return ( 
         <div className="w-full">
@@ -28,6 +29,21 @@ export default function HomePage () {
                     </div>
                   </div> 
                   </Carousel>
+                  <div className="flex flex-col items-center gap-3 mb-12 text-center">
+                    <h4 className="text-gray-500 font-bold text-xl">Featured Products</h4>
+                    <h3 className="text-slate-800 font-bold text-2xl uppercase">BESTSELLER PRODUCTS</h3>
+                    <p className="text-gray-500 font-normal">Problems trying to resolve the conflict between</p>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-8 container mx-auto px-4">
+                        <ProductCard />
+                        <ProductCard />
+                        <ProductCard />
+                        <ProductCard />
+                        <ProductCard />
+                        <ProductCard />
+                        <ProductCard />
+                        <ProductCard />
+                        </div>
                   </div>
                   
     );
