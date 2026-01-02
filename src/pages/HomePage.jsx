@@ -2,6 +2,14 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import hero from "../assets/hero_transparent.png";
 import ProductCard from "../components/ProductCard";
+import product1 from "../assets/product-cover.jpg";
+import product2 from "../assets/image2.png";
+import product3 from "../assets/image3.jpg";
+import product4 from "../assets/image4.jpg";
+import product5 from "../assets/image5.jpg";
+import product6 from "../assets/image6.jpg";
+import product7 from "../assets/image7.jpg";
+import product8 from "../assets/image8.jpg";
 export default function HomePage () { 
     return ( 
         <div className="w-full">
@@ -35,14 +43,14 @@ export default function HomePage () {
                     <p className="text-gray-500 font-normal">Problems trying to resolve the conflict between</p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-8 container mx-auto px-4">
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
+                        <ProductCard image={product1}/>
+                        <ProductCard image={product2}/>
+                        <ProductCard image={product3}/>
+                        <ProductCard image={product4}/>
+                        <ProductCard image={product5}/>
+                        <ProductCard image={product6} />
+                        <ProductCard image={product7}/>
+                        <ProductCard image={product8}/>
                         </div>
                   </div>
                   

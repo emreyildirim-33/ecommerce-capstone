@@ -1,11 +1,10 @@
 import React from 'react';
-import productImg from '../assets/product-cover.jpg';
 
-export default function ProductCard() {
+export default function ProductCard({image}) {
   return (
     <div className='flex flex-col items-center w-full '>
       <img 
-      src={productImg}
+      src={image}
       alt='product'
       className='w-full object-cover'
       />
