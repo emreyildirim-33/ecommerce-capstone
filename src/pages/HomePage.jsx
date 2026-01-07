@@ -10,6 +10,9 @@ import product5 from "../assets/image5.jpg";
 import product6 from "../assets/image6.jpg";
 import product7 from "../assets/image7.jpg";
 import product8 from "../assets/image8.jpg";
+import ShopCards from "../components/ShopCards";
+import GreenHero from "../components/GreenHero";
+import NeuralUniverse from "../components/NeuralUniverse";
 export default function HomePage () { 
     return ( 
         <div className="w-full">
@@ -37,6 +40,8 @@ export default function HomePage () {
                     </div>
                   </div> 
                   </Carousel>
+
+                  <ShopCards />
                   <div className="flex flex-col items-center gap-3 mb-12 text-center">
                     <h4 className="text-gray-500 font-bold text-xl">Featured Products</h4>
                     <h3 className="text-slate-800 font-bold text-2xl uppercase">BESTSELLER PRODUCTS</h3>
@@ -52,6 +57,8 @@ export default function HomePage () {
                         <ProductCard image={product7}/>
                         <ProductCard image={product8}/>
                         </div>
+                        <GreenHero />
+                        <NeuralUniverse />
                   </div>
                   
     );
