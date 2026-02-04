@@ -1,58 +1,56 @@
 import React, { useState } from "react";
-import { Search, ShoppingCart, Menu, User, Heart } from "lucide-react"; 
+import { Search, ShoppingCart, Menu, User, Heart, ChevronDown } from "lucide-react"; 
 import { Link } from "react-router-dom";
 
 export default function Header() { 
     const [isOpen, setIsOpen] = useState(false);
     
     return ( 
-    <header className=" bg-white relative">
+    <header className="bg-white relative">
      <div className="flex justify-between items-center p-4 container mx-auto"> 
         
-       
         <div>
           <Link to="/" className="font-bold text-2xl text-slate-800">
            Bandage
            </Link>
         </div>
 
-       
-       <nav className="hidden md:flex gap-6 font-bold text-slate-500 text-sm"> 
+       {/* NAVİGASYON MENÜSÜ */}
+       <nav className="hidden md:flex gap-6 font-bold text-slate-500 text-sm items-center"> 
             <Link to="/" className="hover:text-slate-800">Home</Link>
-            <Link to="/shop" className="hover:text-slate-800">Shop</Link>
+            
+            {/* 2. BURAYI GÜNCELLEDİK: Shop yazısının yanına ikon geldi */}
+            <Link to="/shop" className="hover:text-slate-800 flex items-center gap-1 font-medium">
+                Shop <ChevronDown size={16} />
+            </Link>
+
             <Link to="/about" className="hover:text-slate-800">About</Link>
             <Link to="/blog" className="hover:text-slate-800">Blog</Link>
             <Link to="/contact" className="hover:text-slate-800">Contact</Link>
             <Link to="/pages" className="hover:text-slate-800">Pages</Link>
         </nav>
 
-       
         <div className="flex gap-4 text-slate-600 items-center">
          
-        
          <div className="hidden md:flex items-center gap-2 text-blue-500 font-bold cursor-pointer hover:text-blue-600">
             <User size={16} />
             <Link to="/login" className="text-sm">Login / Register</Link>
          </div>
 
-        
          <button onClick={() => setIsOpen(!isOpen)} className="hover:text-blue-500">
             <Search />
          </button>
          
-        
          <div className="relative cursor-pointer hover:text-blue-500">
              <ShoppingCart />
-             <span className="absolute -right-2 -top-2 text-[10px] text-white bg-blue-500 rounded-full w-4 h-4 flex items-center justify-center font-normal">1</span> {/* Sayıyı yuvarlak içine aldım */}
+             <span className="absolute -right-2 -top-2 text-[10px] text-white bg-blue-500 rounded-full w-4 h-4 flex items-center justify-center font-normal">1</span>
          </div>
 
-         
          <div className="hidden md:flex relative cursor-pointer hover:text-blue-500">
              <Heart />
              <span className="absolute -right-2 -top-2 text-[10px] text-white bg-blue-500 rounded-full w-4 h-4 flex items-center justify-center font-normal">1</span>
          </div>
 
-        
          <button onClick={() =>  setIsOpen(!isOpen)} className="md:hidden hover:text-blue-500">
             <Menu />
          </button>
@@ -60,7 +58,7 @@ export default function Header() {
          </div>
         </div>
          
-        
+         {/* MOBİL MENÜ */}
          {isOpen && ( 
          <div className="bg-white border-t border-slate-200 flex flex-col items-center gap-8 py-8 text-3xl text-slate-500 font-normal w-full animate-in slide-in-from-top-5 duration-300"> 
             
