@@ -1,57 +1,45 @@
 import React from "react";
-import men from "../assets/men.jpg";
-import women from "../assets/women.jpg";
-import kıds from "../assets/kıds.jpg";
-import accessories from "../assets/accessories.jpg";
+import { Link } from "react-router-dom";
+import menImg from "../assets/p1.jpg";      
+import womenImg from "../assets/p2.jpg";    
+import kidsImg from "../assets/p6.jpg";     
 
-export default function ShopCards() { 
-    return ( 
-    <div className="w-full bg-[#FAFAFA] py-12 ">
+export default function ShopCards() {
+    return (
+        <section className="bg-[#FAFAFA] py-16 px-4">
+            <div className="container mx-auto text-center">
+                <h2 className="text-[#252B42] font-bold text-2xl mb-2 uppercase">Editor's Pick</h2>
+                <p className="text-[#737373] text-sm mb-12">Problems trying to resolve the conflict between</p>
+                
+                {/* 3'LÜ TEMİZ GRID */}
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-6 h-auto md:h-[500px]">
+                    
+                    {/* MEN */}
+                    <Link to="/product/1" className="md:col-span-2 relative group overflow-hidden block shadow-sm rounded-lg">
+                        <img src={menImg} alt="Men" className="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+                        <div className="absolute bottom-8 left-8 bg-white px-10 py-3 font-bold text-[#252B42] uppercase tracking-widest group-hover:bg-[#23A6F0] group-hover:text-white transition-colors">
+                            Men
+                        </div>
+                    </Link>
 
-        <div className="container mx-auto px-4">
-            <div className="flex flex-col items-center gap-3 mb-12 text-center">
-            <h3 className="text-slate-800 font-bold text-2xl uppercase">EDITOR'S PICK</h3>
-            <p  className="text-gray-500 font-normal">Problems trying to resolve the conflict between</p>
+                    {/* WOMEN */}
+                    <Link to="/product/2" className="md:col-span-1 relative group overflow-hidden block shadow-sm rounded-lg">
+                        <img src={womenImg} alt="Women" className="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+                        <div className="absolute bottom-8 left-8 bg-white px-8 py-3 font-bold text-[#252B42] uppercase tracking-widest group-hover:bg-[#23A6F0] group-hover:text-white transition-colors">
+                            Women
+                        </div>
+                    </Link>
+
+                    {/* KIDS */}
+                    <Link to="/product/6" className="md:col-span-1 relative group overflow-hidden block shadow-sm rounded-lg">
+                        <img src={kidsImg} alt="Kids" className="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+                        <div className="absolute bottom-8 left-8 bg-white px-8 py-3 font-bold text-[#252B42] uppercase tracking-widest group-hover:bg-[#23A6F0] group-hover:text-white transition-colors">
+                            Kids
+                        </div>
+                    </Link>
+
+                </div>
             </div>
-        <div className="flex flex-col md:flex-row gap-4 h-[500px]">
-
-         <div className="md:w-[48%] h-full relative ">
-            <img src={men} className=" w-full h-full object-cover "/>
-            <div className="absolute bottom-5 left-5 bg-white px-6 py-3 font-bold">
-            MEN
-            </div>
-        </div>
-
-         <div className="md:w-[24%] h-full relative">
-            <img src={women} className=" w-full h-full object-cover"/>
-            <div className="absolute bottom-5 left-5 bg-white px-6 py-3 font-bold ">
-            WOMEN
-            </div>
-        </div>
-
-         <div className="md:w-[24%] h-full flex flex-col gap-4">
-        
-         <div className="h-[48%] w-full relative">
-            <img src={kıds} className="  w-full  h-full object-cover" />
-            <div className="absolute bottom-5 left-5 bg-white px-4 py-2 font-bold ">
-            KIDS
-            </div>
-        </div>
-
-        <div className="h-[48%] w-full relative">
-            <img src={accessories} className="  w-full h-full object-cover"/>
-            <div className="absolute bottom-5 left-5 bg-white px-4 py-2 font-bold">
-            ACCESSORİES
-            </div>
-
-            </div>
-
-            </div>
-            
-        </div>
-        </div>
-    </div>
-
+        </section>
     );
 }
-    

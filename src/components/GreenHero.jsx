@@ -1,28 +1,44 @@
 import React from "react";
-import greenHeroImg from "../assets/green-hero.png";
+// O kadın resminden kurtulup, elindeki mevcut bir adam resmini çağırıyoruz (örneğin p5)
+import heroImg from "../assets/p5.jpg"; 
 
-export default function GreenHero () { 
-    return ( 
-    <div className="bg-[#23856D] pt-20 px-4">
-     <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
+export default function GreenHero({ addToCart }) {
+    const vitaProduct = {
+        id: "vita-99",
+        title: "Vita Classic Product",
+        price: "$16.48",
+        image: heroImg
+    };
 
-     <div className="text-white flex flex-col gap-6 md:items-start text-center md:text-left">
-     <h5 className="text-[16px] font-bold">SUMMER 2020</h5>
-     <h1 className="text-[58px] font-bold leading-tihgt ">Vita Classic Product</h1>
-     <p className="max-w-[340px] text-[14px]">We know how large objects will act.We know how are objects will act.We know</p>
-      
-     <div className="flex items-center gap-8 ">
-      <h3 className="text-2xl font-bold ">$16.48</h3>
-      <button className="bg-[#2DC071] px-10 py-4 rounded-md uppercase font-bold">Add to Cart</button>
-      </div>
-      </div>
-
-      <div className="relative pt-12 md:pt-0">
-      <img src={greenHeroImg} className="w-full h-full object-contain" />
-      </div>
-
-      </div>
-      </div>
-
+    return (
+        <section className="bg-[#23856D] text-white py-16 px-4 md:px-48 flex flex-col md:flex-row items-center justify-between gap-12 overflow-hidden">
+            <div className="flex-1 flex flex-col gap-6 items-center md:items-start text-center md:text-left">
+                <h5 className="font-bold text-base uppercase tracking-widest">SUMMER 2020</h5>
+                <h2 className="text-4xl md:text-6xl font-bold leading-tight max-w-sm">Vita Classic Product</h2>
+                <p className="text-sm md:text-lg max-w-sm font-light">
+                    We know how large objects will act. We know how objects will act.
+                </p>
+                <div className="flex flex-col md:flex-row items-center gap-6 mt-4">
+                    <span className="text-2xl font-bold">$16.48</span>
+                    <button 
+                        onClick={() => addToCart(vitaProduct)}
+                        className="bg-[#2DC071] text-white px-10 py-4 rounded-md font-bold uppercase hover:bg-[#25a561] transition shadow-lg active:scale-95"
+                    >
+                        ADD TO CART
+                    </button>
+                </div>
+            </div>
+            
+            <div className="flex-1 w-full flex justify-center md:justify-end">
+                {/* O kadın resmi yerine beyaz montlu (p5) veya senin seçeceğin resim gelecek */}
+                <div className="w-[300px] md:w-[400px] h-[400px] md:h-[500px] overflow-hidden rounded-lg shadow-xl">
+                    <img 
+                        src={heroImg} 
+                        className="w-full h-full object-cover" 
+                        alt="Vita Classic Model" 
+                    />
+                </div>
+            </div>
+        </section>
     );
 }
